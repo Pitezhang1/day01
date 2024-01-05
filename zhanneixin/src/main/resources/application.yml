@@ -1,0 +1,17 @@
+server:
+  port: 8082
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql:///zhanneixin
+    username: root
+    password: root
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #方便测试，打印sql语句
+    map-underscore-to-camel-case: true #驼峰原则
+  global-config:
+    db-config:
+      id-type: auto #id的生成规则，自增  ， 如果不写，默认用的是雪花算法
+      table-prefix: d16_ #表前缀
+  mapper-locations: classpath:/mapper/**
